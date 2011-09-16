@@ -11,10 +11,11 @@ Defaults
 --------
 
 By default AJAX Manager is setup with the following options:
-* queue: true
-* cacheResponse: false
-* preventDoubleRequests: true
-* maxRequests: 5
+
+* `queue: true`
+* `cacheResponse: false`
+* `preventDoubleRequests: true`
+* `maxRequests: 5`
 
 This means that AJAX requests will be placed in a FIFO (First In, First Out) queue. Successful responses will not be cached. It will try and prevent double requests. No more than 5 requests will be going on at the same time.
 If you want to change these options you can open the JavaScript file and there is an section clearly marked. The options can be found here: http://www.protofunc.com/scripts/jquery/ajaxManager/
