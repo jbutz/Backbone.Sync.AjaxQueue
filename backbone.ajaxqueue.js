@@ -5,9 +5,10 @@
         if (Backbone.ajaxQueue === undefined)
             Backbone.ajaxQueue = $.Deferred().resolve();
         var args = arguments;
-        Backbone.ajaxQueue = Backbone.ajaxQueue.then($.proxy(function(){
+        var callback = $.proxy(function(){
             return Backbone.$.ajax.apply(Backbone.$, args);
-        }, this));
+        }, this);
+        Backbone.ajaxQueue = Backbone.ajaxQueue.then(callback, callback);
     };
 
 })(jQuery);
